@@ -1,0 +1,14 @@
+#3장 8번
+#n번째 조화수를 구하는 재쉬함수를 작성하시오
+
+total = 0
+def harmonic(n):    #조화수를 구하는 함수
+    global total
+    if n < 1:       #회문 종료조건: 조화수 식에서 분모 n이 0이 되면 종료하고 합계를 구한다.
+        return total
+    total += (1/n)
+    return harmonic(n-1) #재귀함수 이용
+
+n= int(input("n을 입력하세요:"))
+result = harmonic(n)
+print("조화수 H(%d)은" %n, result)
